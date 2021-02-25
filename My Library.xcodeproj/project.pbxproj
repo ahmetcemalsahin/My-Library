@@ -3,35 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		083FCBEC25E702F600769B61 /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083FCBEB25E702F600769B61 /* CustomNavigationView.swift */; };
 		087EF12B25E680590072CE50 /* My_LibraryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087EF12A25E680590072CE50 /* My_LibraryApp.swift */; };
-		087EF12D25E680590072CE50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087EF12C25E680590072CE50 /* ContentView.swift */; };
 		087EF12F25E6805B0072CE50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 087EF12E25E6805B0072CE50 /* Assets.xcassets */; };
 		087EF13225E6805B0072CE50 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 087EF13125E6805B0072CE50 /* Preview Assets.xcassets */; };
 		087EF13725E6805B0072CE50 /* My_Library.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 087EF13525E6805B0072CE50 /* My_Library.xcdatamodeld */; };
-		087EF14125E684640072CE50 /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087EF14025E684640072CE50 /* CustomNavigationView.swift */; };
-		087EF14725E68C730072CE50 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087EF14625E68C730072CE50 /* Home.swift */; };
+		087EF14725E68C730072CE50 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087EF14625E68C730072CE50 /* HomeView.swift */; };
 		0885CFC225E696EF008D0A57 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0885CFC125E696EF008D0A57 /* Book.swift */; };
 		0885CFC625E69890008D0A57 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0885CFC525E69890008D0A57 /* CardView.swift */; };
 		0885CFC925E69C59008D0A57 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0885CFC825E69C59008D0A57 /* DetailView.swift */; };
+		7CCE5BD8F755FE3A4CA365E7 /* Pods_My_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890BD4C78224FA767FFE8E20 /* Pods_My_Library.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		083FCBEB25E702F600769B61 /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
 		087EF12725E680590072CE50 /* My Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		087EF12A25E680590072CE50 /* My_LibraryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_LibraryApp.swift; sourceTree = "<group>"; };
-		087EF12C25E680590072CE50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		087EF12E25E6805B0072CE50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		087EF13125E6805B0072CE50 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		087EF13625E6805B0072CE50 /* My_Library.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Library.xcdatamodel; sourceTree = "<group>"; };
 		087EF13825E6805C0072CE50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		087EF14025E684640072CE50 /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
-		087EF14625E68C730072CE50 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		087EF14625E68C730072CE50 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0885CFC125E696EF008D0A57 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		0885CFC525E69890008D0A57 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		0885CFC825E69C59008D0A57 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		1890F8B16C510E4F9AA68206 /* Pods-My Library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Library.release.xcconfig"; path = "Target Support Files/Pods-My Library/Pods-My Library.release.xcconfig"; sourceTree = "<group>"; };
+		34F0EAC9D4A2CC85E7E176CD /* Pods-My Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Library.debug.xcconfig"; path = "Target Support Files/Pods-My Library/Pods-My Library.debug.xcconfig"; sourceTree = "<group>"; };
+		890BD4C78224FA767FFE8E20 /* Pods_My_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CCE5BD8F755FE3A4CA365E7 /* Pods_My_Library.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +53,8 @@
 			children = (
 				087EF12925E680590072CE50 /* My Library */,
 				087EF12825E680590072CE50 /* Products */,
+				E8238517E1DF6F8CBB4F82A0 /* Pods */,
+				E41E9D8A515285F848E5304E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,7 +75,6 @@
 				087EF12A25E680590072CE50 /* My_LibraryApp.swift */,
 				087EF12E25E6805B0072CE50 /* Assets.xcassets */,
 				087EF13825E6805C0072CE50 /* Info.plist */,
-				087EF13525E6805B0072CE50 /* My_Library.xcdatamodeld */,
 				087EF13025E6805B0072CE50 /* Preview Content */,
 			);
 			path = "My Library";
@@ -87,6 +91,7 @@
 		087EF14325E68C280072CE50 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				087EF13525E6805B0072CE50 /* My_Library.xcdatamodeld */,
 				0885CFC125E696EF008D0A57 /* Book.swift */,
 			);
 			path = Model;
@@ -95,11 +100,10 @@
 		087EF14425E68C2F0072CE50 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				087EF14025E684640072CE50 /* CustomNavigationView.swift */,
-				087EF12C25E680590072CE50 /* ContentView.swift */,
-				087EF14625E68C730072CE50 /* Home.swift */,
+				087EF14625E68C730072CE50 /* HomeView.swift */,
 				0885CFC525E69890008D0A57 /* CardView.swift */,
 				0885CFC825E69C59008D0A57 /* DetailView.swift */,
+				083FCBEB25E702F600769B61 /* CustomNavigationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,6 +115,23 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		E41E9D8A515285F848E5304E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				890BD4C78224FA767FFE8E20 /* Pods_My_Library.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8238517E1DF6F8CBB4F82A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34F0EAC9D4A2CC85E7E176CD /* Pods-My Library.debug.xcconfig */,
+				1890F8B16C510E4F9AA68206 /* Pods-My Library.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 087EF13B25E6805C0072CE50 /* Build configuration list for PBXNativeTarget "My Library" */;
 			buildPhases = (
+				6A6DC1FF215539B6BDF88F85 /* [CP] Check Pods Manifest.lock */,
 				087EF12325E680590072CE50 /* Sources */,
 				087EF12425E680590072CE50 /* Frameworks */,
 				087EF12525E680590072CE50 /* Resources */,
+				CCC95EAE9E4B1239DBF4B1DD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -175,6 +198,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6A6DC1FF215539B6BDF88F85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-My Library-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCC95EAE9E4B1239DBF4B1DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Library/Pods-My Library-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Library/Pods-My Library-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My Library/Pods-My Library-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		087EF12325E680590072CE50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -183,11 +248,10 @@
 				0885CFC625E69890008D0A57 /* CardView.swift in Sources */,
 				0885CFC925E69C59008D0A57 /* DetailView.swift in Sources */,
 				087EF13725E6805B0072CE50 /* My_Library.xcdatamodeld in Sources */,
-				087EF12D25E680590072CE50 /* ContentView.swift in Sources */,
+				083FCBEC25E702F600769B61 /* CustomNavigationView.swift in Sources */,
 				0885CFC225E696EF008D0A57 /* Book.swift in Sources */,
-				087EF14725E68C730072CE50 /* Home.swift in Sources */,
+				087EF14725E68C730072CE50 /* HomeView.swift in Sources */,
 				087EF12B25E680590072CE50 /* My_LibraryApp.swift in Sources */,
-				087EF14125E684640072CE50 /* CustomNavigationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +376,7 @@
 		};
 		087EF13C25E6805C0072CE50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34F0EAC9D4A2CC85E7E176CD /* Pods-My Library.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -333,6 +398,7 @@
 		};
 		087EF13D25E6805C0072CE50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1890F8B16C510E4F9AA68206 /* Pods-My Library.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

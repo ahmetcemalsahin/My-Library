@@ -6,62 +6,77 @@
 //
 
 import SwiftUI
+import ChameleonFramework
 
 struct CustomNavigationView: UIViewControllerRepresentable {
-    func makeCoordinator() -> Coordinator {
-        return CustomNavigationView.Coordinator(parent: self)
-    }
-    
-    //The view which uses this custom view
+    //The view which needs searchBar
     var view: AnyView
     
-    let title: String
-    let placeHolder: String
+    //NavBar title
+    var title: String
     
-    //Closures for searching
-    var onSearch: (String) -> ()
-    var onCancel: () -> ()
+    //SearchBar placeholder
+    var placeHolder: String
+    
+    //Closures about searchBar
+    var onSearch: (String)->()
+    var onCancel: ()->()
     
     
-    //init method
-    init(view: AnyView, placeHolder: String? = "Search", title: String, onSearch: @escaping (String) -> (), onCancel: @escaping () -> ()) {
+    init(view: AnyView, title: String, placeHolder: String? = "Search...", onSearch: @escaping (String)->(), onCancel: @escaping ()->()) {
         self.view = view
-        self.placeHolder = placeHolder!
         self.title = title
+        self.placeHolder = placeHolder!
         self.onSearch = onSearch
         self.onCancel = onCancel
     }
     
-    //Get NavController from UIKit
     func makeUIViewController(context: Context) -> UINavigationController {
-        //SwiftUI view is required
         let childView = UIHostingController(rootView: view)
-        let controller = UINavigationController(rootViewController: childView)
         
-        //NavBar
-        controller.navigationBar.topItem?.title = title
-        controller.navigationBar.prefersLargeTitles = true
+        let navController = UINavigationController(rootViewController: childView)
+        navController.navigationBar.prefersLargeTitles = true
+        navController.navigationBar.topItem?.title = title
         
-        //SearchBar
+        let appearance = UINavigationBarAppearance()
+        //background color of the navigation and status bar
+        appearance.backgroundColor = FlatPlum()
+        //color when the title is large
+        appearance.largeTitleTextAttributes.updateValue(FlatOrange(), forKey: NSAttributedString.Key.foregroundColor)
+        //color when the title is small
+        appearance.titleTextAttributes.updateValue(FlatOrange(), forKey: NSAttributedString.Key.foregroundColor)
+
+        // change the background- and title foregroundcolor for navigationbar
+        navController.navigationBar.standardAppearance = appearance
+        navController.navigationBar.scrollEdgeAppearance = appearance
+        navController.navigationBar.compactAppearance = appearance
+        
         let searchController = UISearchController()
         searchController.searchBar.placeholder = placeHolder
         searchController.searchBar.delegate = context.coordinator
         
         searchController.obscuresBackgroundDuringPresentation = false
-        controller.navigationBar.topItem?.hidesSearchBarWhenScrolling = false
-        controller.navigationBar.topItem?.searchController = searchController
         
-        controller.navigationBar.topItem?.searchController?.searchBar.backgroundColor = .blue
+        searchController.searchBar.backgroundColor = FlatPlum()
+        searchController.searchBar.tintColor = FlatOrange()
         
-        controller.navigationBar.backgroundColor = .blue
+        navController.navigationBar.topItem?.hidesSearchBarWhenScrolling = false
+        navController.navigationBar.topItem?.searchController = searchController
         
-        return controller
+        navController.navigationBar.backgroundColor = FlatPlum()
+        navController.navigationBar.tintColor = FlatOrange()
+        
+        return navController
+        
     }
     
     func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
-        uiViewController.navigationBar.topItem?.title = title
-        uiViewController.navigationBar.topItem?.searchController?.searchBar.placeholder = placeHolder
-        uiViewController.navigationBar.prefersLargeTitles = true
+        uiViewController.navigationBar.backgroundColor = FlatPlum()
+        uiViewController.navigationBar.tintColor = FlatOrange()
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        return CustomNavigationView.Coordinator(parent: self)
     }
     
     class Coordinator: NSObject, UISearchBarDelegate {
@@ -72,11 +87,10 @@ struct CustomNavigationView: UIViewControllerRepresentable {
         }
         
         func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            self.parent.onSearch(searchText)
+            parent.onSearch(searchText)
         }
-        
         func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-            self.parent.onCancel()
+            parent.onCancel()
         }
     }
 }

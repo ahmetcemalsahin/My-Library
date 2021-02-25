@@ -12,7 +12,10 @@ struct CardView: View {
     
     var body: some View {
         HStack(spacing: 15.0) {
-            Image(systemName: "house.fill").resizable().frame(width: 65, height: 65)
+            ZStack(alignment: .center, content: {
+                Image(systemName: "book.closed").resizable().frame(width: 65, height: 65)
+                Text(item.title.first!.uppercased())
+            })
             VStack {
                 HStack {
                     VStack (alignment: .leading, spacing: 5, content: {
@@ -26,13 +29,12 @@ struct CardView: View {
             Spacer()
             VStack {
                 NavigationLink(destination: DetailView(item: item)) {
-                    Image(systemName: "chevron.right").resizable().frame(width: 6, height: 10).foregroundColor(Color(UIColor.label))
-
+                    Image(systemName: "chevron.right").resizable().frame(width: 9, height: 14).foregroundColor(Color(UIColor.label)).padding([.trailing, .top], 4)
                 }
                 Spacer()
             }
-            //Spacer()
-        }
+        }.padding(.vertical, 7)
+        .padding(.horizontal, 20)
     }
 }
 
