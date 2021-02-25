@@ -12,7 +12,7 @@ struct HomeView: View {
     @State var filteredItems = books
     
     var body: some View {
-        CustomNavigationView(view: AnyView(BookListView(filteredItems: $filteredItems)), title: "ACS", placeHolder: "ASFASFV",
+        CustomNavigationView(view: AnyView(BookListView(filteredItems: $filteredItems)), title: "Library", placeHolder: "Search for book...",
                              onSearch: { (txt) in
                                 if txt != "" {
                                     self.filteredItems = books.filter{$0.title.lowercased().contains(txt.lowercased())}
@@ -36,15 +36,9 @@ struct BookListView: View {
                 ForEach(filteredItems) {book in
                     CardView(item: book)
                 }
-            }.background(Color(FlatSand()))
+            }.background(Color(FlatPowderBlue()))
         }.padding(0)
         .edgesIgnoringSafeArea(.bottom)
-        
-        
-//        ZStack {
-//            Color(FlatPlum()).edgesIgnoringSafeArea(.top)
-//
-//        }.edgesIgnoringSafeArea(.bottom)
     }
 }
 
