@@ -5,58 +5,68 @@
 //  Created by ACS on 24.02.2021.
 //
 
+//Make a view model
+//view OWN vm OWN model
+//so, the info should be on vm
+//and shared with binding (observable)
+
 import SwiftUI
 import ChameleonFramework
-import SwiftEntryKit
 
 struct HomeView: View {
-    @State var filteredItems = books
-    @State var flag: Bool = false
+    @ObservedObject var viewModel: HomeViewModel
     
-    @State var popUpFields = [["Title", ""], ["Author", ""], ["Number of pages", ""]]
-    @State var rating: Int = -1
+    @State var popUpTextFields = ["","",""]
+    
+    init() {
+        self.viewModel = HomeViewModel()
+    }
     
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                CustomNavigationView(view: AnyView(BookListView(filteredItems: $filteredItems, flag: $flag)), title: "Library", placeHolder: "Search for book...",
+                CustomNavigationView(view: AnyView(BookListView(viewModel: self.viewModel)), title: "Library", placeHolder: "Search for book...",
                                      onSearch: { (txt) in
                                         if txt != "" {
-                                            self.filteredItems = books.filter{$0.title.lowercased().contains(txt.lowercased())}
+                                            self.viewModel.onSearch(txt)
                                         }else {
-                                            self.filteredItems = books
+                                            self.viewModel.resetList()
                                         }
                                      }, onCancel: {
-                                        self.filteredItems = books
+                                        self.viewModel.bookList = books
                                      }
                 )
                 
                 
                 //Add book - PopUp Screen
-                if flag {
+                if self.viewModel.flag {
                     Color.gray.opacity(0.4).edgesIgnoringSafeArea(.all)
                     VStack {
+                        //Exit button
                         HStack{
                             Spacer()
                             Image(systemName: "xmark.circle")
                                 .resizable()
                                 .frame(width: 25, height: 25)
-                                .foregroundColor(Color(FlatRed())
-                                                    .opacity(0.8))
+                                .foregroundColor(Color(FlatRed()).opacity(0.8))
                                 .padding(4)
                                 .onTapGesture {
-                                    self.flag.toggle()
-                                    self.rating = -1
+                                    self.viewModel.flag.toggle()
+                                    self.viewModel.popUpRateBook = -1
                                 }
                         }
+                        
+                        //Book infos
                         Text("Enter book informations")
                             .foregroundColor(Color(FlatSkyBlue()))
                         ForEach(0...2, id: \.self) { index in
-                            TextField(popUpFields[index][0], text: $popUpFields[index][1])
+                            TextField(self.viewModel.popUpLabels[index], text: $popUpTextFields[index])
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .foregroundColor(Color(FlatGrayDark()))
                                 .accentColor(Color(FlatSand()))
+                                
                         }
+                        //Rate book
                         HStack {
                             Text("Rating")
                                 .padding(10)
@@ -66,12 +76,9 @@ struct HomeView: View {
                             Spacer()
                             HStack {
                                 ForEach(0..<5) { number in
-                                    Image(systemName: "star.fill")
-                                        .resizable()
-                                        .frame(width: 30, height: 30)
-                                        .foregroundColor(rating >= number ? Color(FlatYellow()) : Color(FlatGrayDark()))
+                                    StarsView(order: number, rating: self.viewModel.popUpRateBook, starSize: 30)
                                         .onTapGesture {
-                                            self.rating = number
+                                            self.viewModel.popUpRateBook = number
                                         }
                                     Spacer()
                                 }
@@ -79,6 +86,7 @@ struct HomeView: View {
                         }
                         .padding([.top, .bottom], 10)
                         
+                        //Add to list
                         HStack {
                             Text("Add").padding(4)
                             Image(systemName: "plus.circle")
@@ -87,7 +95,8 @@ struct HomeView: View {
                                 .padding(4)
                         }
                         .onTapGesture {
-                            
+                            print(popUpTextFields)
+                            self.viewModel.flag.toggle()
                         }
                         .padding(8)
                         .background(Color(FlatGreen()).opacity(0.8))
@@ -107,13 +116,12 @@ struct HomeView: View {
 }
 
 struct BookListView: View {
-    @Binding var filteredItems: [Book]
-    @Binding var flag: Bool
+    @ObservedObject var viewModel: HomeViewModel
     
     var body: some View {
         ScrollView(.vertical) {
             VStack(spacing: 10) {
-                ForEach(filteredItems) {book in
+                ForEach(self.viewModel.bookList) {book in
                     CardView(item: book)
                 }
             }.background(Color.white)
@@ -123,7 +131,7 @@ struct BookListView: View {
         .navigationBarItems(trailing: Button(action: {
             
             //Show pop op on tap
-            self.flag = true
+            self.viewModel.flag = true
         }, label: {
             Image(systemName: "plus.square.fill")
                 .resizable()

@@ -16,6 +16,7 @@
 		0885CFC225E696EF008D0A57 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0885CFC125E696EF008D0A57 /* Book.swift */; };
 		0885CFC625E69890008D0A57 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0885CFC525E69890008D0A57 /* CardView.swift */; };
 		0885CFC925E69C59008D0A57 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0885CFC825E69C59008D0A57 /* DetailView.swift */; };
+		08D2027425E9FE6F0068E15A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D2027325E9FE6F0068E15A /* HomeViewModel.swift */; };
 		7CCE5BD8F755FE3A4CA365E7 /* Pods_My_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890BD4C78224FA767FFE8E20 /* Pods_My_Library.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		0885CFC125E696EF008D0A57 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		0885CFC525E69890008D0A57 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		0885CFC825E69C59008D0A57 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		08D2027325E9FE6F0068E15A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1890F8B16C510E4F9AA68206 /* Pods-My Library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Library.release.xcconfig"; path = "Target Support Files/Pods-My Library/Pods-My Library.release.xcconfig"; sourceTree = "<group>"; };
 		34F0EAC9D4A2CC85E7E176CD /* Pods-My Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Library.debug.xcconfig"; path = "Target Support Files/Pods-My Library/Pods-My Library.debug.xcconfig"; sourceTree = "<group>"; };
 		890BD4C78224FA767FFE8E20 /* Pods_My_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 		087EF14525E68C3A0072CE50 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				08D2027325E9FE6F0068E15A /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				0885CFC625E69890008D0A57 /* CardView.swift in Sources */,
 				0885CFC925E69C59008D0A57 /* DetailView.swift in Sources */,
 				087EF13725E6805B0072CE50 /* My_Library.xcdatamodeld in Sources */,
+				08D2027425E9FE6F0068E15A /* HomeViewModel.swift in Sources */,
 				083FCBEC25E702F600769B61 /* CustomNavigationView.swift in Sources */,
 				0885CFC225E696EF008D0A57 /* Book.swift in Sources */,
 				087EF14725E68C730072CE50 /* HomeView.swift in Sources */,
