@@ -30,7 +30,7 @@ struct CustomNavigationView: UIViewControllerRepresentable {
         self.onSearch = onSearch
         self.onCancel = onCancel
     }
-    
+        
     func makeUIViewController(context: Context) -> UINavigationController {
         
         //Need a SwiftUI View
@@ -41,15 +41,17 @@ struct CustomNavigationView: UIViewControllerRepresentable {
         navController.navigationBar.prefersLargeTitles = true
         navController.navigationBar.topItem?.title = title
         
+        
         //Nav+Status Bar appearance
         let appearance = UINavigationBarAppearance()
         //Background color of the navigation and status bar
         appearance.backgroundColor = FlatBlue()
         //Color when the title is large
-        appearance.largeTitleTextAttributes.updateValue(ContrastColorOf(FlatBlue(), returnFlat: true), forKey: NSAttributedString.Key.foregroundColor)
+        appearance.largeTitleTextAttributes.updateValue(FlatWhite(), forKey: NSAttributedString.Key.foregroundColor)
         //Color when the title is small
-        appearance.titleTextAttributes.updateValue(ContrastColorOf(FlatBlue(), returnFlat: true), forKey: NSAttributedString.Key.foregroundColor)
+        appearance.titleTextAttributes.updateValue(FlatWhite(), forKey: NSAttributedString.Key.foregroundColor)
 
+        
         //Change the background- and title foregroundcolor for navigationbar
         navController.navigationBar.standardAppearance = appearance
         navController.navigationBar.scrollEdgeAppearance = appearance
@@ -63,9 +65,13 @@ struct CustomNavigationView: UIViewControllerRepresentable {
         
         searchController.obscuresBackgroundDuringPresentation = false
         
+        
         //Search Bar color
         searchController.searchBar.backgroundColor = FlatBlue()
-        searchController.searchBar.tintColor = ContrastColorOf(FlatBlue(), returnFlat: true)
+        searchController.searchBar.barTintColor = FlatRed()
+        searchController.searchBar.tintColor = FlatGray()
+        searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString.init(string: placeHolder, attributes: [NSAttributedString.Key.foregroundColor: FlatGray()])
+        searchController.searchBar.searchTextField.backgroundColor = FlatWhite()
 
         
         //Search bar is not hidden when scroll
@@ -77,7 +83,7 @@ struct CustomNavigationView: UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
-
+        
     }
     
     func makeCoordinator() -> Coordinator {
@@ -97,6 +103,6 @@ struct CustomNavigationView: UIViewControllerRepresentable {
         func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
             parent.onCancel()
         }
+        
     }
-    
 }

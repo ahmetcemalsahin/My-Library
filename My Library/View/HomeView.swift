@@ -11,6 +11,7 @@ import ChameleonFramework
 struct HomeView: View {
     @State var filteredItems = books
     
+    
     var body: some View {
         CustomNavigationView(view: AnyView(BookListView(filteredItems: $filteredItems)), title: "Library", placeHolder: "Search for book...",
                              onSearch: { (txt) in
@@ -36,10 +37,17 @@ struct BookListView: View {
                 ForEach(filteredItems) {book in
                     CardView(item: book)
                 }
-            }.background(Color(FlatPowderBlue()))
-        }.padding(0)
+            }.background(Color.white)
+        }
+        .padding(0)
         .edgesIgnoringSafeArea(.bottom)
+        .navigationBarItems(trailing: Button(action: {
+            //add
+        }, label: {
+            Image(systemName: "plus.square.fill")
+                .resizable()
+                .frame(width: 25, height: 25)
+                .foregroundColor(Color(FlatWhite()))
+        }))
     }
 }
-
-

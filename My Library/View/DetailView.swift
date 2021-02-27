@@ -24,7 +24,7 @@ struct DetailView: View {
             HStack {
                 Image(systemName: "chevron.backward")
                     .frame(width: 10, height: 20)
-                    .foregroundColor(Color(FlatOrange()))
+                    .foregroundColor(Color(FlatWhite()))
             }
         }))
         

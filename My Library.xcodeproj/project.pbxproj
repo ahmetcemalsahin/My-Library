@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		083FCBEC25E702F600769B61 /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083FCBEB25E702F600769B61 /* CustomNavigationView.swift */; };
-		083FCBF125E7246100769B61 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083FCBF025E7246100769B61 /* HostingController.swift */; };
 		087EF12B25E680590072CE50 /* My_LibraryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087EF12A25E680590072CE50 /* My_LibraryApp.swift */; };
 		087EF12F25E6805B0072CE50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 087EF12E25E6805B0072CE50 /* Assets.xcassets */; };
 		087EF13225E6805B0072CE50 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 087EF13125E6805B0072CE50 /* Preview Assets.xcassets */; };
@@ -22,7 +21,6 @@
 
 /* Begin PBXFileReference section */
 		083FCBEB25E702F600769B61 /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
-		083FCBF025E7246100769B61 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		087EF12725E680590072CE50 /* My Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		087EF12A25E680590072CE50 /* My_LibraryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_LibraryApp.swift; sourceTree = "<group>"; };
 		087EF12E25E6805B0072CE50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 				087EF12E25E6805B0072CE50 /* Assets.xcassets */,
 				087EF13825E6805C0072CE50 /* Info.plist */,
 				087EF13025E6805B0072CE50 /* Preview Content */,
-				083FCBF025E7246100769B61 /* HostingController.swift */,
 			);
 			path = "My Library";
 			sourceTree = "<group>";
@@ -250,7 +247,6 @@
 			files = (
 				0885CFC625E69890008D0A57 /* CardView.swift in Sources */,
 				0885CFC925E69C59008D0A57 /* DetailView.swift in Sources */,
-				083FCBF125E7246100769B61 /* HostingController.swift in Sources */,
 				087EF13725E6805B0072CE50 /* My_Library.xcdatamodeld in Sources */,
 				083FCBEC25E702F600769B61 /* CustomNavigationView.swift in Sources */,
 				0885CFC225E696EF008D0A57 /* Book.swift in Sources */,
