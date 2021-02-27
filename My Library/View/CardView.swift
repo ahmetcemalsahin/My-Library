@@ -25,7 +25,7 @@ struct CardView: View {
                 Text(item.title).font(.title3).padding(.top, 0)
                 Text(item.author).font(.footnote).foregroundColor(Color(FlatGrayDark())).bold()
                 //Rating stars
-                StarsView(rating: 1.5, maxRating: 5, starSize: 20.0)
+                StarsView(rating: 2, starSize: 20.0)
             })
             Spacer()
             
@@ -44,32 +44,19 @@ struct CardView: View {
 
 //Rating stars view
 struct StarsView: View {
-    let rating: CGFloat
-    let maxRating: Int
+    let rating: Int
     let starSize: CGFloat
     
     var body: some View {
-        let stars = HStack(spacing: 0) {
-            ForEach(0..<maxRating) { _ in
+        HStack(spacing: 0) {
+            ForEach(0..<5) { i in
                 Image(systemName: "star.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: starSize, height: starSize)
+                    .foregroundColor(i <= rating ? Color(FlatYellow()) : Color(FlatGrayDark()))
             }
         }
-
-        stars.overlay(
-            GeometryReader { g in
-                let width = rating / CGFloat(maxRating) * g.size.width
-                ZStack(alignment: .leading) {
-                    Rectangle()
-                        .frame(width: width)
-                        .foregroundColor(.yellow)
-                }
-            }
-            .mask(stars)
-            )
-        .foregroundColor(.gray)
     }
 }
 
